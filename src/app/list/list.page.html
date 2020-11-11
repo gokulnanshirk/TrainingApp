@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>list</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-card (click)="alertDetail(i.name,i.city,i.age)" *ngFor="let i of users" style="padding: 20px;">
+  <ion-card-header>
+  <ion-card-title>{{i.name}}</ion-card-title>
+</ion-card-header>
+<ion-card-content>
+  <ion-card-subtitle>{{i.city}}</ion-card-subtitle>
+  <ion-card-subtitle>{{i.age}}</ion-card-subtitle>
+</ion-card-content>
+</ion-card>
+
+</ion-content>
+
+<ion-button (click)="showBanglorGuys()">Show Banglore Guys</ion-button>
+<ion-button (click)="showAllGuys()">Show All Guys</ion-button>
+<ion-button (click)="findAGuy()">Find Suresh</ion-button>
+
+<ion-button color="secondary" routerLink="/home">Go To Home Page</ion-button>

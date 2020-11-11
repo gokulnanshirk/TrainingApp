@@ -1,20 +1,40 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title> {{title}} </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-item>
+    <ion-label>SHOW :</ion-label>
+  <ion-input type="text" [(ngModel)]="show" ></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>title :</ion-label>
+<ion-input type="text" [(ngModel)]="title" ></ion-input>
+</ion-item>
+
+  <ion-card *ngIf="show == 'student'">
+    <ion-title>Student</ion-title>
+    <ul>
+      <li 
+      *ngFor="let l of student; let i = index" 
+      (click)="showName(l.name)">
+      {{i}} - {{l.name}} 
+    </li>
+    </ul>
+  </ion-card>
+
+  <ion-card *ngIf="show == 'teacher'">
+    <ion-title>Teacher</ion-title>
+    <ul>
+      <li *ngFor="let l of teacher; let i = index"  >
+        {{l.name}}
+      </li>
+    </ul>
+  </ion-card>
+
 </ion-content>
+<ion-button (click)="gotToList()">Go To List Page</ion-button>
