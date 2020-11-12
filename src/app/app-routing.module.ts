@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'list',
     loadChildren: () => import('./list/list.module').then( m => m.ListPageModule)
   },
+  {
+    path: 'dynamic-list',
+    loadChildren: () => import('./dynamic-list/dynamic-list.module').then( m => m.DynamicListPageModule)
+  },
 ];
 
 @NgModule({
